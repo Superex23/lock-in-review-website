@@ -1,0 +1,341 @@
+/*
+Color Scheme: #F2A71B, #593D0A, #F29422, #D9A76A, #260101
+*/
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: ForevsDemo-Medium;
+    src: url("../forevs-font-family/ForevsDemo-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: ForevsDemo-BoldItalic;
+    src: url("../forevs-font-family/ForevsDemo-BoldItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: ForevsDemo-Regular;
+    src: url("../forevs-font-family/ForevsDemo-Regular.otf") format("opentype");
+}
+
+body {
+    margin: 0;
+    color: #260101;
+    background-color: #F29422;
+    font-family: ForevsDemo-Regular, Arial, sans-serif;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #593D0A;
+    font-family: ForevsDemo-Medium;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topnav a {
+    float: left;
+    color: #260101;
+    text-align: center;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+.topnav a:hover {
+    background-color: #D9A76A;
+    color: white;
+}
+
+.topnav a.active {
+    background-color: #F29422;
+    color: white;
+}
+
+.review-page {
+    width: min(1200px, 92vw);
+    margin: 24px auto 0;
+}
+
+.review-hero {
+    background-color: #F2A71B;
+    border-radius: 28px;
+    padding: 28px;
+    border: 3px solid #593D0A;
+}
+
+.review-hero h1 {
+    margin: 8px 0 10px;
+    font-family: ForevsDemo-BoldItalic, Arial, sans-serif;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.hero-kicker {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: ForevsDemo-Medium, Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.hero-dek {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.hero-meta {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-meta span {
+    display: inline-block;
+    background: #D9A76A;
+    border: 2px solid #593D0A;
+    border-radius: 999px;
+    padding: 15px 25px;
+    font-size: 20px;
+}
+
+.sticky-review {
+    margin-top: 24px;
+}
+
+.sticky-track {
+    height: 500vh;
+}
+
+.sticky-wrapper {
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 110px);
+    display: flex;
+    align-items: stretch;
+}
+
+.sticky-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 18px;
+}
+
+.review-copy,
+.review-media {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.review-copy {
+    background: #593D0A;
+    color: #F2A71B;
+    padding: 20px;
+}
+
+.review-copy-item,
+.review-media-item {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.review-copy-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 24px;
+    pointer-events: none;
+}
+
+.review-copy-item h2 {
+    margin: 0 0 10px;
+    font-family: ForevsDemo-BoldItalic, Arial, sans-serif;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.review-copy-item p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: clamp(1rem, 1.35vw, 1.2rem);
+}
+
+.review-toc {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.review-toc button,
+.back-overview-btn {
+    border: 2px solid #D9A76A;
+    background: transparent;
+    color: #F2A71B;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-family: ForevsDemo-Medium, Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.review-toc button:hover,
+.back-overview-btn:hover {
+    background: #D9A76A;
+    color: white;
+}
+
+.back-overview-btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.review-media-item {
+    margin: 0;
+    background: #F29422;
+    border-radius: inherit;
+    overflow: hidden;
+    clip-path: inset(0 round 24px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.review-media-content,
+.review-media-item img,
+.review-media-item video {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    border-radius: 18px;
+    background: #F29422;
+}
+
+.review-media-item figure {
+    margin: 0;
+}
+
+.review-media-item video {
+    outline: none;
+}
+
+.review-copy-item.is-active,
+.review-media-item.is-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.review-copy-item.is-active {
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.review-end-space {
+    height: 16vh;
+}
+
+.references-section {
+    width: min(1200px, 92vw);
+    margin: 20px auto 0;
+    background: #F2A71B;
+    border: 3px solid #593D0A;
+    border-radius: 24px;
+    padding: 20px 24px;
+}
+
+.references-section h2 {
+    margin: 0 0 12px;
+    font-family: ForevsDemo-BoldItalic, Arial, sans-serif;
+    font-size: 34px;
+    color: #260101;
+}
+
+.references-section ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.references-section li {
+    margin-bottom: 8px;
+    color: #260101;
+    font-size: 18px;
+}
+
+.references-section a {
+    color: #260101;
+    text-decoration: underline;
+}
+
+.references-section a:hover {
+    color: #593D0A;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 10px 0 20px;
+    font-family: ForevsDemo-Medium, Arial, sans-serif;
+}
+
+@media (max-width: 900px) {
+    .sticky-track {
+        height: auto;
+    }
+
+    .sticky-wrapper {
+        position: static;
+        height: auto;
+    }
+
+    .sticky-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .review-copy {
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .review-media {
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .review-copy-item,
+    .review-media-item {
+        position: static;
+        opacity: 1;
+        transform: none;
+    }
+
+    .back-overview-btn {
+        margin-top: 12px;
+    }
+
+    .review-media-item {
+        height: 260px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .review-copy-item,
+    .review-media-item {
+        transition: none;
+        transform: none;
+    }
+}

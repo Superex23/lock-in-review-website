@@ -1,0 +1,297 @@
+/*
+Color Scheme: #F2A71B, #593D0A, #F29422, #D9A76A, #260101
+*/
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: ForevsDemo-Medium;
+    src: url("../forevs-font-family/ForevsDemo-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: ForevsDemo-BoldItalic;
+    src: url("../forevs-font-family/ForevsDemo-BoldItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: ForevsDemo-Regular;
+    src: url("../forevs-font-family/ForevsDemo-Regular.otf") format("opentype");
+}
+
+body {
+    margin: 0;
+    background: #F29422;
+    color: #260101;
+    font-family: ForevsDemo-Regular, Arial, sans-serif;
+}
+
+.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 16px;
+    background: rgba(89, 61, 10, 0.92);
+    backdrop-filter: blur(6px);
+}
+
+.topnav a {
+    color: #F2A71B;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: ForevsDemo-Medium, Arial, sans-serif;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.topnav a:hover {
+    background-color: #D9A76A;
+    color: white;
+}
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 16px;
+    background-image: url("../images/hiddenking_rightshift.jpg");
+    background-size: cover;
+    background-position: center right;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 1, 1, 0.28);
+    backdrop-filter: blur(8px);
+}
+
+.hero-content {
+    position: relative;
+    width: min(980px, 92vw);
+    text-align: center;
+    z-index: 1;
+}
+
+.site-title {
+    margin: 0;
+    color: #F2A71B;
+    font-family: ForevsDemo-BoldItalic, Arial, sans-serif;
+    font-size: clamp(3rem, 11vw, 7.5rem);
+    line-height: 1;
+    text-shadow: 0 8px 24px rgba(38, 1, 1, 0.5);
+}
+
+.feature-panel {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 30px 16px;
+    background-size: cover;
+    background-position: center;
+    border-top: 2px solid rgba(89, 61, 10, 0.35);
+    overflow: hidden;
+}
+
+.feature-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 1, 1, 0.35);
+    backdrop-filter: blur(6px);
+}
+
+.feature-one {
+    background-image: linear-gradient(rgba(38, 1, 1, 0.35), rgba(38, 1, 1, 0.35)), url("../images/deadlockportrait.png");
+}
+
+.feature-two {
+    background-image: linear-gradient(rgba(38, 1, 1, 0.35), rgba(38, 1, 1, 0.35)), url("../images/Six New Heroes.png");
+}
+
+.feature-three {
+    background-image: linear-gradient(rgba(38, 1, 1, 0.35), rgba(38, 1, 1, 0.35)), url("../images/patron_hidden_king.png");
+}
+
+.panel-content {
+    position: relative;
+    width: min(720px, 92vw);
+    margin: 0 auto;
+    background: rgba(242, 167, 27, 0.85);
+    border: 3px solid #593D0A;
+    border-radius: 24px;
+    padding: 22px;
+}
+
+.panel-content h2 {
+    margin-top: 0;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.more-section {
+    min-height: 32vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 16px 20px;
+}
+
+.and-more-link {
+    display: inline-block;
+    margin-top: 0;
+    text-decoration: none;
+    color: #260101;
+    font-family: ForevsDemo-BoldItalic, Arial, sans-serif;
+    font-size: clamp(1.6rem, 5vw, 3.2rem);
+    background: transparent;
+}
+
+.and-more-link:hover {
+    color: #593D0A;
+}
+
+.reviews-section {
+    width: min(1220px, 94vw);
+    margin: 30px auto 0;
+    min-height: calc(100vh - 140px);
+}
+
+.reviews-section > h2 {
+    margin: 0 0 12px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.left,
+.right,
+.full {
+    width: min(1220px, 94vw);
+    margin: 16px auto;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 150px;
+    padding: 14px 18px;
+    border: 3px solid #593D0A;
+    border-radius: 24px;
+    background: #F2A71B;
+}
+
+.row[onclick] {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.row[onclick]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(38, 1, 1, 0.2);
+}
+
+.col_sm {
+    width: 170px;
+    height: 110px;
+    padding: 10px;
+    border-radius: 14px;
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.col_sm img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+.col_lg {
+    flex: 1;
+    min-width: 0;
+}
+
+.full {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.col {
+    border-radius: 20px;
+    border: 3px solid #593D0A;
+    padding: 14px;
+    background: #F2A71B;
+}
+
+p {
+    font-family: ForevsDemo-Regular, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.45;
+    margin: 0;
+}
+
+h2 {
+    color: #260101;
+    font-size: 30px;
+    font-family: ForevsDemo-BoldItalic, Arial, sans-serif;
+    margin: 0 0 8px;
+}
+
+h3 {
+    color: #260101;
+    font-size: 28px;
+    font-family: ForevsDemo-BoldItalic, Arial, sans-serif;
+    margin: 0 0 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 8px 0 16px;
+    font-family: ForevsDemo-Medium, Arial, sans-serif;
+}
+
+.reviews-page {
+    background: #F29422;
+}
+
+@media (max-width: 900px) {
+    .hero-section {
+        min-height: 80vh;
+        background-position: center;
+    }
+
+    .feature-panel {
+        min-height: 80vh;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .col_sm {
+        width: 100%;
+        height: 170px;
+    }
+
+    .full {
+        grid-template-columns: 1fr;
+    }
+}
