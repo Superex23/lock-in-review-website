@@ -116,11 +116,11 @@ body {
 }
 
 .feature-two {
-    background-image: linear-gradient(rgba(38, 1, 1, 0.35), rgba(38, 1, 1, 0.35)), url("../images/Six New Heroes.png");
+    background-image: linear-gradient(rgba(38, 1, 1, 0.35), rgba(38, 1, 1, 0.35)), url("../images/TFTLandscape.jpg");
 }
 
 .feature-three {
-    background-image: linear-gradient(rgba(38, 1, 1, 0.35), rgba(38, 1, 1, 0.35)), url("../images/patron_hidden_king.png");
+    background-image: linear-gradient(rgba(38, 1, 1, 0.35), rgba(38, 1, 1, 0.35)), url("../images/NierLandscape.jpg");
 }
 
 .panel-content {

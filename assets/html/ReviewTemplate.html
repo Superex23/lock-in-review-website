@@ -10,9 +10,10 @@
 </head>
 <body>
     <!--NAV-->
-    <div class="topnav">
+    <nav class="topnav">
         <a href="../../index.html">Home</a>
-    </div>
+        <a href="reviews.html">Reviews</a>
+    </nav>
 
     <!--
       COPY GUIDE:
@@ -21,6 +22,7 @@
       3) Replace image src values in .review-media-item
       4) Keep section count/order aligned between text and media blocks
       5) Update the row onclick in index.html to your new file name
+      6) Replace the audio source in the Visuals and Audio section's .review-audio-player
     -->
 
     <main class="review-page">
@@ -63,6 +65,13 @@
                             <article class="review-copy-item" data-review-copy>
                                 <h2>Visuals and Audio</h2>
                                 <p>[Talk about art direction, graphics quality, soundtrack, and voice acting.]</p>
+                                <div class="review-audio-block">
+                                    <p class="review-audio-label">Audio sample</p>
+                                    <audio class="review-audio-player" controls preload="none">
+                                        <source src="../audio/[game-audio-sample].mp3" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
                                 <button type="button" class="back-overview-btn" data-back-overview>Back to overview</button>
                             </article>
                             <article class="review-copy-item" data-review-copy>
@@ -79,7 +88,7 @@
                         <div class="review-media">
                             <!--
                               OPTIONAL VIDEO BLOCK (copy/paste into any .review-media-item):
-                              <video class="review-media-content" controls muted loop playsinline preload="metadata" poster="../images/your-poster.png">
+                              <video class="review-media-content" controls muted loop playsinline preload="metadata">
                                   <source src="../videos/your-video.mp4" type="video/mp4">
                                   Your browser does not support the video tag.
                               </video>

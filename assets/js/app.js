@@ -29,12 +29,7 @@
         return;
       }
 
-      if (index === nextIndex) {
-        const playPromise = video.play();
-        if (playPromise && typeof playPromise.catch === "function") {
-          playPromise.catch(() => {});
-        }
-      } else {
+      if (index !== nextIndex) {
         video.pause();
       }
     });
